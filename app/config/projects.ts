@@ -13,6 +13,14 @@ export interface Project {
 export const projects: Project[] = [
   // Static HTML Sites
   {
+    slug: "wds-carpentry",
+    name: "WDSbuild",
+    description: "Master builders website - Melbourne Bayside & Mornington Peninsula",
+    type: "static",
+    category: "Client Website",
+    color: "#d4a853",
+  },
+  {
     slug: "now-24-locksmiths",
     name: "Now 24 Hour Locksmiths",
     description: "Emergency locksmith website - Glasgow & Clydebank",
