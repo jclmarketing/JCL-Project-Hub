@@ -13,6 +13,22 @@ export interface Project {
 export const projects: Project[] = [
   // Static HTML Sites
   {
+    slug: "now-24-locksmiths",
+    name: "Now 24 Hour Locksmiths",
+    description: "Emergency locksmith website - Glasgow & Clydebank",
+    type: "static",
+    category: "Client Website",
+    color: "#f97316",
+  },
+  {
+    slug: "ingram-security",
+    name: "Ingram Security",
+    description: "Locksmith & security specialists website - Glasgow",
+    type: "static",
+    category: "Client Website",
+    color: "#1e3a5f",
+  },
+  {
     slug: "arco-locksmiths",
     name: "Arco Locksmiths",
     description: "Locksmith services website",
