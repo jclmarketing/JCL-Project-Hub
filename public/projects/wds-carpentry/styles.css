@@ -26,6 +26,21 @@ h1,h2,h3{font-family:'Playfair Display',serif}
 .section-head h2{font-size:40px;font-weight:700;line-height:1.15;margin-bottom:14px}
 .section-head p{color:var(--text-light);font-size:16px}
 
+/* Logo image */
+.logo-img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--border)}
+
+/* Hero background image */
+.hero{background-size:cover;background-position:center}
+
+/* About image */
+.about-image{border-radius:var(--r-lg);overflow:hidden;margin-bottom:20px}
+.about-image img{width:100%;height:auto;border-radius:var(--r-lg)}
+
+/* Project thumbs grid */
+.project-thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:32px}
+.project-thumbs img{width:100%;height:120px;object-fit:cover;border-radius:8px;transition:var(--t);cursor:pointer}
+.project-thumbs img:hover{transform:scale(1.05);box-shadow:var(--shadow-lg)}
+
 /* Header */
 .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);transition:var(--t)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
@@ -185,6 +200,7 @@ h1,h2,h3{font-family:'Playfair Display',serif}
   .about-inner,.contact-inner{grid-template-columns:1fr}
   .reviews-grid{grid-template-columns:1fr 1fr}
   .portfolio-grid{grid-template-columns:1fr}.folio-wide{grid-column:auto}
+  .project-thumbs{grid-template-columns:repeat(3,1fr)}
   .footer-top{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:768px){
@@ -198,6 +214,7 @@ h1,h2,h3{font-family:'Playfair Display',serif}
   .process-grid{grid-template-columns:1fr}
   .section-head h2{font-size:30px}
   .reviews-grid{grid-template-columns:1fr}
+  .project-thumbs{grid-template-columns:repeat(2,1fr)}
   .form-row{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column;gap:6px;text-align:center}
