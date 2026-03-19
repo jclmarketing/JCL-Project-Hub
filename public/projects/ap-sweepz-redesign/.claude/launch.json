@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ap-sweepz",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "/Users/jonathanlawson/Documents/Coding Projects/Claude/ap-sweepz-redesign", "-l", "3847", "--no-clipboard"],
+      "port": 3847
+    }
+  ]
+}

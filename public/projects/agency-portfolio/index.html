@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXUS | Digital Marketing Agency</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Cursor glow effect -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Floating particles canvas -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <path d="M16 2L28 9V23L16 30L4 23V9L16 2Z" stroke="url(#logoGrad)" stroke-width="2"/>
+            <path d="M16 8L22 12V20L16 24L10 20V12L16 8Z" fill="url(#logoGrad)"/>
+            <defs>
+              <linearGradient id="logoGrad" x1="4" y1="2" x2="28" y2="30">
+                <stop stop-color="#a855f7"/>
+                <stop offset="1" stop-color="#06b6d4"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="logo-text">NEXUS</span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact" class="nav-cta">Start a Project</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Start a Project</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-video-wrap">
+      <video autoplay muted loop playsinline class="hero-video" id="heroVideo">
+        <source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge glass-morphism" data-animate="fade-up" data-delay="0">
+        <span class="badge-dot"></span>
+        Available for Q2 2026 projects
+      </div>
+      <h1 class="hero-title" data-animate="fade-up" data-delay="100">
+        <span class="title-line">We craft digital</span>
+        <span class="title-line gradient-text">experiences</span>
+        <span class="title-line">that convert.</span>
+      </h1>
+      <p class="hero-subtitle" data-animate="fade-up" data-delay="200">
+        Award-winning digital marketing agency specializing in brand strategy,
+        performance marketing, and immersive web experiences.
+      </p>
+      <div class="hero-actions" data-animate="fade-up" data-delay="300">
+        <a href="#work" class="btn btn-primary">
+          <span>View Our Work</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="#contact" class="btn btn-glass glass-morphism">
+          <span>Get in Touch</span>
+        </a>
+      </div>
+      <div class="hero-stats" data-animate="fade-up" data-delay="400">
+        <div class="stat">
+          <span class="stat-number" data-count="150">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Projects Delivered</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number" data-count="98">0</span><span class="stat-suffix">%</span>
+          <span class="stat-label">Client Retention</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number" data-count="12">0</span><span class="stat-suffix">x</span>
+          <span class="stat-label">Avg. ROI</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <section class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span>Brand Strategy</span><span class="marquee-dot">&#x2726;</span>
+        <span>Performance Marketing</span><span class="marquee-dot">&#x2726;</span>
+        <span>Web Development</span><span class="marquee-dot">&#x2726;</span>
+        <span>Social Media</span><span class="marquee-dot">&#x2726;</span>
+        <span>Content Creation</span><span class="marquee-dot">&#x2726;</span>
+        <span>SEO & SEM</span><span class="marquee-dot">&#x2726;</span>
+        <span>Motion Design</span><span class="marquee-dot">&#x2726;</span>
+        <span>UI/UX Design</span><span class="marquee-dot">&#x2726;</span>
+        <span>Brand Strategy</span><span class="marquee-dot">&#x2726;</span>
+        <span>Performance Marketing</span><span class="marquee-dot">&#x2726;</span>
+        <span>Web Development</span><span class="marquee-dot">&#x2726;</span>
+        <span>Social Media</span><span class="marquee-dot">&#x2726;</span>
+        <span>Content Creation</span><span class="marquee-dot">&#x2726;</span>
+        <span>SEO & SEM</span><span class="marquee-dot">&#x2726;</span>
+        <span>Motion Design</span><span class="marquee-dot">&#x2726;</span>
+        <span>UI/UX Design</span><span class="marquee-dot">&#x2726;</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag glass-morphism">What We Do</span>
+        <h2 class="section-title">Services built for <span class="gradient-text">growth</span></h2>
+        <p class="section-desc">We combine creative excellence with data-driven strategy to deliver measurable results across every touchpoint.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card glass-morphism" data-animate="fade-up" data-delay="0">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="20" stroke="url(#sGrad1)" stroke-width="2"/>
+              <path d="M16 24l6 6 10-12" stroke="url(#sGrad1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs><linearGradient id="sGrad1" x1="4" y1="4" x2="44" y2="44"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs>
+            </svg>
+          </div>
+          <div class="service-number">01</div>
+          <h3>Brand Strategy & Identity</h3>
+          <p>We define your brand's DNA through deep market research, competitor analysis, and audience insights to create a compelling identity.</p>
+          <ul class="service-features">
+            <li>Brand Positioning</li>
+            <li>Visual Identity Systems</li>
+            <li>Brand Guidelines</li>
+          </ul>
+          <a href="#contact" class="service-link">
+            Learn More
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+          </a>
+        </div>
+
+        <div class="service-card glass-morphism" data-animate="fade-up" data-delay="100">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="6" y="6" width="36" height="36" rx="8" stroke="url(#sGrad2)" stroke-width="2"/>
+              <path d="M18 30V22M24 30V18M30 30V14" stroke="url(#sGrad2)" stroke-width="2.5" stroke-linecap="round"/>
+              <defs><linearGradient id="sGrad2" x1="6" y1="6" x2="42" y2="42"><stop stop-color="#f97316"/><stop offset="1" stop-color="#ec4899"/></linearGradient></defs>
+            </svg>
+          </div>
+          <div class="service-number">02</div>
+          <h3>Performance Marketing</h3>
+          <p>Data-driven campaigns across paid search, social, and programmatic channels that maximize ROAS and drive qualified traffic.</p>
+          <ul class="service-features">
+            <li>PPC Management</li>
+            <li>Social Ads</li>
+            <li>Conversion Optimization</li>
+          </ul>
+          <a href="#contact" class="service-link">
+            Learn More
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+          </a>
+        </div>
+
+        <div class="service-card glass-morphism" data-animate="fade-up" data-delay="200">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M8 14h32v24H8z" stroke="url(#sGrad3)" stroke-width="2" rx="4"/>
+              <path d="M16 10h16" stroke="url(#sGrad3)" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="24" cy="26" r="6" stroke="url(#sGrad3)" stroke-width="2"/>
+              <defs><linearGradient id="sGrad3" x1="8" y1="10" x2="40" y2="38"><stop stop-color="#06b6d4"/><stop offset="1" stop-color="#22c55e"/></linearGradient></defs>
+            </svg>
+          </div>
+          <div class="service-number">03</div>
+          <h3>Web & App Development</h3>
+          <p>Custom websites and applications built with cutting-edge technology, optimized for speed, SEO, and conversions.</p>
+          <ul class="service-features">
+            <li>Custom Web Apps</li>
+            <li>E-Commerce</li>
+            <li>Progressive Web Apps</li>
+          </ul>
+          <a href="#contact" class="service-link">
+            Learn More
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+          </a>
+        </div>
+
+        <div class="service-card glass-morphism" data-animate="fade-up" data-delay="300">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M24 8l4 8 8 2-6 6 2 8-8-4-8 4 2-8-6-6 8-2z" stroke="url(#sGrad4)" stroke-width="2" stroke-linejoin="round"/>
+              <defs><linearGradient id="sGrad4" x1="10" y1="8" x2="38" y2="40"><stop stop-color="#eab308"/><stop offset="1" stop-color="#f97316"/></linearGradient></defs>
+            </svg>
+          </div>
+          <div class="service-number">04</div>
+          <h3>Content & Social Media</h3>
+          <p>Scroll-stopping content strategies and social media management that build communities and drive engagement.</p>
+          <ul class="service-features">
+            <li>Content Strategy</li>
+            <li>Video Production</li>
+            <li>Community Management</li>
+          </ul>
+          <a href="#contact" class="service-link">
+            Learn More
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work / Portfolio Section -->
+  <section class="work" id="work">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag glass-morphism">Our Work</span>
+        <h2 class="section-title">Featured <span class="gradient-text">projects</span></h2>
+        <p class="section-desc">A selection of our most impactful work across industries.</p>
+      </div>
+
+      <div class="work-grid">
+        <div class="work-card" data-animate="fade-up" data-delay="0">
+          <div class="work-card-inner">
+            <div class="work-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+              <div class="work-image-content">
+                <div class="work-mockup">
+                  <div class="mockup-bar"><span></span><span></span><span></span></div>
+                  <div class="mockup-body">
+                    <div class="mockup-line w60"></div>
+                    <div class="mockup-line w80"></div>
+                    <div class="mockup-line w40"></div>
+                    <div class="mockup-blocks">
+                      <div class="mockup-block"></div>
+                      <div class="mockup-block"></div>
+                      <div class="mockup-block"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="work-info">
+              <div class="work-tags">
+                <span class="work-tag">Branding</span>
+                <span class="work-tag">Web Design</span>
+              </div>
+              <h3>Elevate SaaS Platform</h3>
+              <p>Complete rebrand and website redesign resulting in 340% increase in trial signups.</p>
+              <div class="work-metrics">
+                <div class="work-metric">
+                  <span class="metric-value">340%</span>
+                  <span class="metric-label">More Signups</span>
+                </div>
+                <div class="work-metric">
+                  <span class="metric-value">2.1s</span>
+                  <span class="metric-label">Load Time</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-card" data-animate="fade-up" data-delay="100">
+          <div class="work-card-inner">
+            <div class="work-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+              <div class="work-image-content">
+                <div class="work-mockup phone">
+                  <div class="mockup-notch"></div>
+                  <div class="mockup-body">
+                    <div class="mockup-circle"></div>
+                    <div class="mockup-line w60"></div>
+                    <div class="mockup-line w40"></div>
+                    <div class="mockup-grid">
+                      <div class="mockup-sq"></div>
+                      <div class="mockup-sq"></div>
+                      <div class="mockup-sq"></div>
+                      <div class="mockup-sq"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="work-info">
+              <div class="work-tags">
+                <span class="work-tag">Social Media</span>
+                <span class="work-tag">Content</span>
+              </div>
+              <h3>Bloom Beauty Campaign</h3>
+              <p>Viral social media campaign that generated 2.5M impressions and 45K new followers in 30 days.</p>
+              <div class="work-metrics">
+                <div class="work-metric">
+                  <span class="metric-value">2.5M</span>
+                  <span class="metric-label">Impressions</span>
+                </div>
+                <div class="work-metric">
+                  <span class="metric-value">45K</span>
+                  <span class="metric-label">New Followers</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-card" data-animate="fade-up" data-delay="200">
+          <div class="work-card-inner">
+            <div class="work-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+              <div class="work-image-content">
+                <div class="work-mockup">
+                  <div class="mockup-bar"><span></span><span></span><span></span></div>
+                  <div class="mockup-body">
+                    <div class="mockup-chart">
+                      <div class="chart-bar" style="height:40%"></div>
+                      <div class="chart-bar" style="height:65%"></div>
+                      <div class="chart-bar" style="height:45%"></div>
+                      <div class="chart-bar" style="height:80%"></div>
+                      <div class="chart-bar" style="height:60%"></div>
+                      <div class="chart-bar" style="height:90%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="work-info">
+              <div class="work-tags">
+                <span class="work-tag">PPC</span>
+                <span class="work-tag">Analytics</span>
+              </div>
+              <h3>FinTech Growth Engine</h3>
+              <p>Performance marketing strategy that reduced CAC by 62% while scaling monthly revenue to $2.8M.</p>
+              <div class="work-metrics">
+                <div class="work-metric">
+                  <span class="metric-value">-62%</span>
+                  <span class="metric-label">CAC Reduction</span>
+                </div>
+                <div class="work-metric">
+                  <span class="metric-value">$2.8M</span>
+                  <span class="metric-label">Monthly Rev</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-card" data-animate="fade-up" data-delay="300">
+          <div class="work-card-inner">
+            <div class="work-image" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);">
+              <div class="work-image-content">
+                <div class="work-mockup phone">
+                  <div class="mockup-notch"></div>
+                  <div class="mockup-body">
+                    <div class="mockup-line w80"></div>
+                    <div class="mockup-line w60"></div>
+                    <div class="mockup-img-placeholder"></div>
+                    <div class="mockup-line w40"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="work-info">
+              <div class="work-tags">
+                <span class="work-tag">E-Commerce</span>
+                <span class="work-tag">UX Design</span>
+              </div>
+              <h3>Luxe Fashion Rebrand</h3>
+              <p>End-to-end e-commerce experience redesign driving 185% increase in average order value.</p>
+              <div class="work-metrics">
+                <div class="work-metric">
+                  <span class="metric-value">185%</span>
+                  <span class="metric-label">AOV Increase</span>
+                </div>
+                <div class="work-metric">
+                  <span class="metric-value">4.9</span>
+                  <span class="metric-label">App Rating</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Team Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-layout">
+        <div class="about-left" data-animate="fade-up">
+          <span class="section-tag glass-morphism">About Us</span>
+          <h2 class="section-title">A team of <span class="gradient-text">obsessed</span> digital craftspeople</h2>
+          <p class="about-text">Founded in 2019, NEXUS has grown from a two-person startup to a 30+ person powerhouse. We believe great marketing is equal parts art and science.</p>
+          <div class="about-features">
+            <div class="about-feature glass-morphism">
+              <div class="feature-icon purple">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+              <div>
+                <h4>Data-First Approach</h4>
+                <p>Every decision backed by analytics and real-time data.</p>
+              </div>
+            </div>
+            <div class="about-feature glass-morphism">
+              <div class="feature-icon cyan">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+              </div>
+              <div>
+                <h4>Creative Excellence</h4>
+                <p>Award-winning designs that push boundaries.</p>
+              </div>
+            </div>
+            <div class="about-feature glass-morphism">
+              <div class="feature-icon orange">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <div>
+                <h4>Rapid Execution</h4>
+                <p>Agile workflows that deliver results fast.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-right" data-animate="fade-up" data-delay="200">
+          <div class="team-grid">
+            <div class="team-card glass-morphism">
+              <div class="team-avatar" style="background: linear-gradient(135deg, #a855f7, #6366f1);">
+                <span>AJ</span>
+              </div>
+              <h4>Alex Johnson</h4>
+              <p>Founder & CEO</p>
+            </div>
+            <div class="team-card glass-morphism">
+              <div class="team-avatar" style="background: linear-gradient(135deg, #ec4899, #f97316);">
+                <span>SR</span>
+              </div>
+              <h4>Sarah Rivera</h4>
+              <p>Creative Director</p>
+            </div>
+            <div class="team-card glass-morphism">
+              <div class="team-avatar" style="background: linear-gradient(135deg, #06b6d4, #22c55e);">
+                <span>MK</span>
+              </div>
+              <h4>Marcus Kim</h4>
+              <p>Head of Strategy</p>
+            </div>
+            <div class="team-card glass-morphism">
+              <div class="team-avatar" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">
+                <span>LP</span>
+              </div>
+              <h4>Luna Park</h4>
+              <p>Tech Lead</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logos / Clients -->
+  <section class="clients">
+    <div class="container">
+      <p class="clients-label" data-animate="fade-up">Trusted by industry leaders</p>
+      <div class="clients-grid" data-animate="fade-up" data-delay="100">
+        <div class="client-logo glass-morphism">TechCorp</div>
+        <div class="client-logo glass-morphism">Visionary</div>
+        <div class="client-logo glass-morphism">Quantum</div>
+        <div class="client-logo glass-morphism">Apex Labs</div>
+        <div class="client-logo glass-morphism">NovaSync</div>
+        <div class="client-logo glass-morphism">ZenithAI</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag glass-morphism">Testimonials</span>
+        <h2 class="section-title">What our <span class="gradient-text">clients</span> say</h2>
+      </div>
+
+      <div class="testimonials-track">
+        <div class="testimonial-card glass-morphism" data-animate="fade-up" data-delay="0">
+          <div class="testimonial-stars">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <blockquote>"NEXUS transformed our entire digital presence. Our lead generation increased by 400% within the first quarter. They don't just deliver &mdash; they over-deliver."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #a855f7, #ec4899);">JD</div>
+            <div>
+              <strong>James Davidson</strong>
+              <span>CEO, TechCorp</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card glass-morphism" data-animate="fade-up" data-delay="100">
+          <div class="testimonial-stars">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <blockquote>"The level of creativity and strategic thinking is unmatched. Every campaign they've run has exceeded our KPIs. NEXUS is a true growth partner."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #06b6d4, #22c55e);">EM</div>
+            <div>
+              <strong>Elena Martinez</strong>
+              <span>CMO, Visionary Inc</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card glass-morphism" data-animate="fade-up" data-delay="200">
+          <div class="testimonial-stars">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <blockquote>"From strategy to execution, NEXUS handles everything flawlessly. They helped us launch in 3 new markets and our brand recognition skyrocketed."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #f97316, #eab308);">RW</div>
+            <div>
+              <strong>Ryan Walsh</strong>
+              <span>Founder, NovaSync</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card glass-morphism" data-animate="fade-up">
+        <div class="cta-bg-shapes">
+          <div class="cta-shape shape-1"></div>
+          <div class="cta-shape shape-2"></div>
+          <div class="cta-shape shape-3"></div>
+        </div>
+        <h2>Ready to <span class="gradient-text">10x</span> your digital presence?</h2>
+        <p>Let's build something extraordinary together. Book a free 30-minute strategy call.</p>
+        <a href="#contact" class="btn btn-primary btn-lg">
+          <span>Book a Strategy Call</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-layout">
+        <div class="contact-left" data-animate="fade-up">
+          <span class="section-tag glass-morphism">Contact</span>
+          <h2 class="section-title">Let's start your <span class="gradient-text">next project</span></h2>
+          <p>Fill out the form and our team will get back to you within 24 hours.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>hello@nexusagency.com</span>
+            </div>
+            <div class="contact-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <span>+1 (555) 123-4567</span>
+            </div>
+            <div class="contact-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>San Francisco, CA</span>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-link glass-morphism" aria-label="Twitter">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-link glass-morphism" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="#" class="social-link glass-morphism" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" class="social-link glass-morphism" aria-label="Dribbble">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"/><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"/><path d="M8.56 2.75c4.37 6 6.02 11.67 6.7 21.08"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-right" data-animate="fade-up" data-delay="200">
+          <form class="contact-form glass-morphism" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="john@company.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input type="text" id="company" placeholder="Company name">
+            </div>
+            <div class="form-group">
+              <label for="budget">Budget Range</label>
+              <select id="budget">
+                <option value="">Select budget range</option>
+                <option value="10k-25k">$10K - $25K</option>
+                <option value="25k-50k">$25K - $50K</option>
+                <option value="50k-100k">$50K - $100K</option>
+                <option value="100k+">$100K+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell us about your project</label>
+              <textarea id="message" rows="4" placeholder="Describe your project goals and timeline..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <span>Send Message</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <span class="logo-icon">
+              <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+                <path d="M16 2L28 9V23L16 30L4 23V9L16 2Z" stroke="url(#logoGrad2)" stroke-width="2"/>
+                <path d="M16 8L22 12V20L16 24L10 20V12L16 8Z" fill="url(#logoGrad2)"/>
+                <defs><linearGradient id="logoGrad2" x1="4" y1="2" x2="28" y2="30"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs>
+              </svg>
+            </span>
+            <span class="logo-text">NEXUS</span>
+          </a>
+          <p>Crafting digital experiences that drive growth.</p>
+        </div>
+        <div class="footer-links-group">
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
+            <a href="#">Careers</a>
+            <a href="#">Blog</a>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <a href="#services">Brand Strategy</a>
+            <a href="#services">Performance Marketing</a>
+            <a href="#services">Web Development</a>
+            <a href="#services">Content & Social</a>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <a href="#">Twitter / X</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Instagram</a>
+            <a href="#">Dribbble</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 NEXUS Agency. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

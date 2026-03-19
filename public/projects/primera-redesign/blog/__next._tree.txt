@@ -1,0 +1,8 @@
+:HL["/projects/primera-redesign/_next/static/chunks/5b3c69e5bc889e4c.css","style"]
+:HL["/projects/primera-redesign/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["https://images.squarespace-cdn.com/content/v1/605ce30db09db84f513243e4/1616924902875-1MTW586P20D5DZ6I0V3F/Primera-logo.png","image"]
+:HL["https://images.squarespace-cdn.com/content/v1/605ce30db09db84f513243e4/1626882448692-D4EX93881VMAFWBPDEWT/LogoRequest-White_RGB_Accredited.png","image"]
+:HL["https://images.squarespace-cdn.com/content/v1/605ce30db09db84f513243e4/f0b57f20-411d-4fa3-9d5f-d7bede217572/GS_Reglogo_1a.png","image"]
+:HL["https://images.squarespace-cdn.com/content/v1/605ce30db09db84f513243e4/2dd7cea5-fde2-4b9f-971e-cca6dce45523/Seal+Transparent+SafeContractor+Accreditation.png","image"]
+:HL["https://images.squarespace-cdn.com/content/v1/605ce30db09db84f513243e4/1636113180072-18HIN9XKGQRMNP986O4O/IMG_7267.JPG","image"]
+0:{"buildId":"kK3km41ZhSQcQhJL2BVOr","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"blog","paramType":null,"paramKey":"blog","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
