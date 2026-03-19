@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { projects, categories } from "./config/projects";
+import { SignOutButton } from "./components/sign-out-button";
 
 function TypeBadge({ type }: { type: string }) {
   const colors: Record<string, string> = {
@@ -73,9 +74,12 @@ export default function Home() {
               Project Hub
             </h1>
           </div>
-          <p className="text-zinc-500 text-sm">
-            {projects.length} projects {"\u00B7"} JCL Marketing
-          </p>
+          <div className="flex items-center justify-between">
+            <p className="text-zinc-500 text-sm">
+              {projects.length} projects {"\u00B7"} JCL Marketing
+            </p>
+            <SignOutButton />
+          </div>
         </div>
       </header>
 
