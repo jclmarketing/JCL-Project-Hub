@@ -1,4 +1,4 @@
-export type ProjectType = "static" | "vite" | "nextjs" | "wordpress";
+export type ProjectType = "static" | "vite" | "nextjs" | "wordpress" | "github";
 
 export interface Project {
   slug: string;
@@ -14,11 +14,11 @@ export const projects: Project[] = [
   // Static HTML Sites
   {
     slug: "wds-carpentry",
-    name: "WDSbuild",
-    description: "Master builders website - Melbourne Bayside & Mornington Peninsula",
+    name: "WDS Carpentry",
+    description: "Carpentry & general building - Herne Bay, Kent",
     type: "static",
     category: "Client Website",
-    color: "#d4a853",
+    color: "#1a1b4b",
   },
   {
     slug: "now-24-locksmiths",
@@ -191,6 +191,80 @@ export const projects: Project[] = [
     type: "wordpress",
     category: "WordPress",
     color: "#BE185D",
+  },
+  // GitHub Projects (deployed externally)
+  {
+    slug: "jcl-crm",
+    name: "JCL CRM",
+    description: "Digital Agency Management CRM",
+    type: "github",
+    category: "GitHub",
+    color: "#8B5CF6",
+    externalUrl: "https://crm.jclmarketing.co.uk",
+  },
+  {
+    slug: "rraccess-crm",
+    name: "RR Access CRM",
+    description: "CRM for RR Access",
+    type: "github",
+    category: "GitHub",
+    color: "#EF4444",
+    externalUrl: "https://crm.rraccess.co.uk",
+  },
+  {
+    slug: "garage-roof-crm",
+    name: "Garage Roof Company CRM",
+    description: "CRM for Garage Roof Company",
+    type: "github",
+    category: "GitHub",
+    color: "#F59E0B",
+    externalUrl: "https://crm.garageroofcompany.co.uk",
+  },
+  {
+    slug: "mighty-crm",
+    name: "Mighty CRM",
+    description: "CRM for Mighty Structural",
+    type: "github",
+    category: "GitHub",
+    color: "#10B981",
+    externalUrl: "https://crm.mightystructural.com",
+  },
+  // GitHub Projects (deployed on Vercel)
+  {
+    slug: "jcl-project-hub",
+    name: "JCL Project Hub",
+    description: "This project hub dashboard",
+    type: "github",
+    category: "GitHub",
+    color: "#171717",
+    externalUrl: "https://jcl-project-hub.vercel.app",
+  },
+  {
+    slug: "holmlea-locksmith-gh",
+    name: "Holmlea Locksmith",
+    description: "Modern 24/7 locksmith website for Holmlea Locksmith Services, Glasgow",
+    type: "github",
+    category: "GitHub",
+    color: "#6366F1",
+    externalUrl: "https://holmlea-locksmith.vercel.app",
+  },
+  {
+    slug: "acro-locksmith-gh",
+    name: "Arco Locksmiths",
+    description: "24/7 Emergency Locksmith serving Ayrshire, Glasgow & beyond",
+    type: "github",
+    category: "GitHub",
+    color: "#3B82F6",
+    externalUrl: "https://acro-locksmith.vercel.app",
+  },
+  {
+    slug: "cp-electrical-gh",
+    name: "CP Electrical",
+    description: "Electrical services website deployed on Vercel",
+    type: "github",
+    category: "GitHub",
+    color: "#F59E0B",
+    externalUrl: "https://cp-electrical.vercel.app",
   },
 ];
 

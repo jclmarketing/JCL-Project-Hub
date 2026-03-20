@@ -8,12 +8,14 @@ function TypeBadge({ type }: { type: string }) {
     vite: "bg-purple-500/10 text-purple-400 border-purple-500/20",
     nextjs: "bg-blue-500/10 text-blue-400 border-blue-500/20",
     wordpress: "bg-sky-500/10 text-sky-400 border-sky-500/20",
+    github: "bg-zinc-500/10 text-zinc-300 border-zinc-500/20",
   };
   const labels: Record<string, string> = {
     static: "HTML",
     vite: "Vite + React",
     nextjs: "Next.js",
     wordpress: "WordPress",
+    github: "GitHub",
   };
   return (
     <span
@@ -28,14 +30,14 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   const isWordpress = project.type === "wordpress";
   const baseClasses =
     "group relative block rounded-xl border border-white/5 bg-white/[0.02] p-5 transition-all hover:border-white/10 hover:bg-white/[0.04]";
-  const wpClasses = isWordpress
+  const cardClasses = isWordpress
     ? `${baseClasses} opacity-50 cursor-not-allowed`
     : baseClasses;
 
   return (
     <Link
       href={isWordpress ? "#" : `/apps/${project.slug}`}
-      className={wpClasses}
+      className={cardClasses}
     >
       <div className="flex items-start justify-between mb-3">
         <div

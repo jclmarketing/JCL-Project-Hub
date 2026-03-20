@@ -31,6 +31,14 @@ export default async function ProjectPage({
   const project = projects.find((p) => p.slug === slug);
   if (!project || project.type === "wordpress") notFound();
 
+  const isGithub = project.type === "github";
+  const iframeSrc = isGithub && project.externalUrl
+    ? project.externalUrl
+    : `/projects/${slug}/index.html`;
+  const openUrl = isGithub && project.externalUrl
+    ? project.externalUrl
+    : `/projects/${slug}/index.html`;
+
   return (
     <div className="h-screen flex flex-col bg-[#0a0a0a]">
       {/* Toolbar */}
@@ -59,11 +67,11 @@ export default async function ProjectPage({
           />
           <span className="text-sm font-medium text-white">{project.name}</span>
           <span className="text-[10px] text-zinc-600 uppercase tracking-wider">
-            {project.type}
+            {project.type === "github" ? "vercel" : project.type}
           </span>
         </div>
         <a
-          href={`/projects/${slug}/index.html`}
+          href={openUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="text-xs text-zinc-500 hover:text-white transition-colors"
@@ -74,7 +82,7 @@ export default async function ProjectPage({
 
       {/* Project iframe */}
       <iframe
-        src={`/projects/${slug}/index.html`}
+        src={iframeSrc}
         className="flex-1 w-full border-0"
         title={project.name}
       />
