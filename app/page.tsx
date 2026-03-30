@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { projects, categories } from "./config/projects";
+import { getWebsites, type Website } from "./lib/supabase/websites";
 import { SignOutButton } from "./components/sign-out-button";
+import { AIProjectsSection } from "./components/ai-projects-section";
 
 function TypeBadge({ type }: { type: string }) {
   const colors: Record<string, string> = {
@@ -26,25 +27,33 @@ function TypeBadge({ type }: { type: string }) {
   );
 }
 
-function ProjectCard({ project }: { project: (typeof projects)[number] }) {
-  const isWordpress = project.type === "wordpress";
+function ProjectCard({ project }: { project: Website }) {
+  const isWordpress = project.site_builder === "wordpress";
+  const isGithub = project.site_builder === "github";
   const baseClasses =
     "group relative block rounded-xl border border-white/5 bg-white/[0.02] p-5 transition-all hover:border-white/10 hover:bg-white/[0.04]";
   const cardClasses = isWordpress
     ? `${baseClasses} opacity-50 cursor-not-allowed`
     : baseClasses;
 
+  const href = isWordpress
+    ? "#"
+    : isGithub && project.external_url
+    ? project.external_url
+    : `/apps/${project.slug}`;
+
   return (
     <Link
-      href={isWordpress ? "#" : `/apps/${project.slug}`}
+      href={href}
       className={cardClasses}
+      {...(isGithub && project.external_url ? { target: "_blank", rel: "noopener noreferrer" } : {})}
     >
       <div className="flex items-start justify-between mb-3">
         <div
           className="w-3 h-3 rounded-full"
-          style={{ backgroundColor: project.color }}
+          style={{ backgroundColor: project.color || "#8B5CF6" }}
         />
-        <TypeBadge type={project.type} />
+        <TypeBadge type={project.site_builder || "static"} />
       </div>
       <h3 className="text-sm font-medium text-white mb-1 group-hover:text-white/90">
         {project.name}
@@ -62,7 +71,10 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   );
 }
 
-export default function Home() {
+export default async function Home() {
+  const websites = await getWebsites();
+  const categories = [...new Set(websites.map((w) => w.category).filter(Boolean))] as string[];
+
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
       {/* Header */}
@@ -78,18 +90,33 @@ export default function Home() {
           </div>
           <div className="flex items-center justify-between">
             <p className="text-zinc-500 text-sm">
-              {projects.length} projects {"\u00B7"} JCL Marketing
+              {websites.length} projects {"\u00B7"} JCL Marketing
             </p>
-            <SignOutButton />
+            <div className="flex items-center gap-3">
+              <Link
+                href="/create"
+                className="text-xs px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-500 transition-colors flex items-center gap-2"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+                New AI Project
+              </Link>
+              <SignOutButton />
+            </div>
           </div>
         </div>
       </header>
 
       {/* Projects Grid */}
       <main className="max-w-7xl mx-auto px-6 py-10">
+        {/* AI-Generated Projects (dynamic from Supabase) */}
+        <AIProjectsSection />
+
+        {/* Website categories from Supabase */}
         {categories.map((category) => {
-          const categoryProjects = projects.filter(
-            (p) => p.category === category
+          const categoryProjects = websites.filter(
+            (w) => w.category === category
           );
           return (
             <section key={category} className="mb-12">

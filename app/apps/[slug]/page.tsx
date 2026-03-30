@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { projects } from "@/app/config/projects";
+import { getWebsites, getWebsiteBySlug } from "@/app/lib/supabase/websites";
 import { notFound } from "next/navigation";
 
-export function generateStaticParams() {
-  return projects
-    .filter((p) => p.type !== "wordpress")
-    .map((p) => ({ slug: p.slug }));
+export async function generateStaticParams() {
+  const websites = await getWebsites();
+  return websites
+    .filter((w) => w.site_builder !== "wordpress" && w.site_builder !== "github")
+    .map((w) => ({ slug: w.slug }));
 }
 
 export async function generateMetadata({
@@ -14,11 +15,11 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
-  if (!project) return { title: "Not Found" };
+  const website = await getWebsiteBySlug(slug);
+  if (!website) return { title: "Not Found" };
   return {
-    title: `${project.name} | JCL Project Hub`,
-    description: project.description,
+    title: `${website.name} | JCL Project Hub`,
+    description: website.description,
   };
 }
 
@@ -28,15 +29,15 @@ export default async function ProjectPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
-  if (!project || project.type === "wordpress") notFound();
+  const website = await getWebsiteBySlug(slug);
+  if (!website || website.site_builder === "wordpress") notFound();
 
-  const isGithub = project.type === "github";
-  const iframeSrc = isGithub && project.externalUrl
-    ? project.externalUrl
+  const isGithub = website.site_builder === "github";
+  const iframeSrc = isGithub && website.external_url
+    ? website.external_url
     : `/projects/${slug}/index.html`;
-  const openUrl = isGithub && project.externalUrl
-    ? project.externalUrl
+  const openUrl = isGithub && website.external_url
+    ? website.external_url
     : `/projects/${slug}/index.html`;
 
   return (
@@ -63,11 +64,11 @@ export default async function ProjectPage({
           <div className="w-px h-4 bg-white/10" />
           <div
             className="w-2.5 h-2.5 rounded-full"
-            style={{ backgroundColor: project.color }}
+            style={{ backgroundColor: website.color || "#8B5CF6" }}
           />
-          <span className="text-sm font-medium text-white">{project.name}</span>
+          <span className="text-sm font-medium text-white">{website.name}</span>
           <span className="text-[10px] text-zinc-600 uppercase tracking-wider">
-            {project.type === "github" ? "vercel" : project.type}
+            {website.site_builder === "github" ? "vercel" : website.site_builder}
           </span>
         </div>
         <a
@@ -84,7 +85,7 @@ export default async function ProjectPage({
       <iframe
         src={iframeSrc}
         className="flex-1 w-full border-0"
-        title={project.name}
+        title={website.name}
       />
     </div>
   );
